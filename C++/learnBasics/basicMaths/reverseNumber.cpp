@@ -1,0 +1,19 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+
+int main(){
+    int num = 0;
+    cout << "enter a num: ";
+    cin >> num;
+    int rev=0;
+    while(num > 0){
+        int rem = num % 10;
+        rev = rev * 10 + rem;
+        num = num / 10;
+    }
+
+    cout << endl << "reverse: " << rev;
+}
