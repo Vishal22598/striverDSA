@@ -1,26 +1,45 @@
 #include<iostream>
 using namespace std;
-
-void checkSorted(int arr[], int size){
-    bool isSorted = true;
-    for(int i=1; i<size; i++){
-        if(arr[i] < arr[i-1]){
-            isSorted = false;
-            break;
+void rotateLeftOrRightByK(int arr[], int size, int k, string direction){
+    int temp[k];
+    if(direction == "left"){
+        for(int i=0; i<k; i++)
+            temp[i] = arr[i];
+        
+        for(int i=k; i<size; i++){
+            arr[i-k] = arr[i];
         }
+        for(int i=size-k, j=0; i<size; i++)
+            arr[i] = temp[j++];
+
     }
-    if(isSorted)
-        cout << "array is sorted";
-    else
-        cout << "array is not sorted";
+    else{
+        for(int i=size-k, j=0; i<size; i++)
+            temp[j++] = arr[i];
+        
+        for(int i=size-1-k; i>=0; i--){
+            arr[i+k] = arr[i];
+        }
+
+        for(int i=0; i<k; i++)
+            arr[i] = temp[i];
+    }
+
 }
+
 int main(){
     int n;
     cin >> n;
     int arr[n];
-    for(int i=0;i<n; i++)
+    for(int i=0;i<n; i++){
         cin >> arr[i];
-    
-    checkSorted(arr, n);
+    }
+    int k = 2;
+    string direction = "left";
+    // string direction = "right";
+    rotateLeftOrRightByK(arr, n, k, direction);
+    for(int i: arr)
+        cout << i << " ";
+
     return 0;
 }
