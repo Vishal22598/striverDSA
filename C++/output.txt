@@ -1,1 +1,1 @@
-max Consecutive One is : 3
+single appearance ele is : 2
