@@ -1,1 +1,1 @@
-single appearance ele is : 2
+max profit : 5
