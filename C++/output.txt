@@ -1,1 +1,1 @@
-element 17 present at index: 7
+lower bound of element 2 is: 5
