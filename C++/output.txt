@@ -1,1 +1,1 @@
-count: 2
+element 17 present at index: 7
