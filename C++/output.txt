@@ -1,1 +1,1 @@
-lower bound of element 2 is: 5
+total occurence of 13 is: 3
